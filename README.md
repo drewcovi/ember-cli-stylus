@@ -2,6 +2,8 @@
 
 Use node-stylus to preprocess your ember-cli app's files, with support for sourceMaps and include paths.
 
+This is essentially a copy-paste-replace job of [ember-cli-sass](https://github.com/aexmachina/ember-cli-sass). Credits go to [@aexmachina](https://github.com/aexmachina).
+
 ## Installation
 
 ```
