@@ -2,7 +2,7 @@
 
 Use node-stylus to preprocess your ember-cli app's files, with support for sourceMaps and include paths.
 
-This is essentially a copy-paste-replace job of [ember-cli-sass](https://github.com/aexmachina/ember-cli-sass). Credits go to [@aexmachina](https://github.com/aexmachina).
+This is essentially a fork-search-replace job of [ember-cli-sass](https://github.com/aexmachina/ember-cli-sass). Credits go to [@aexmachina](https://github.com/aexmachina).
 
 ## Installation
 
@@ -26,7 +26,7 @@ var app = new EmberApp({
 - `.inputFile`: the input Stylus file, defaults to `app.styl`
 - `.outputFile`: the output CSS file, defaults to `app.css`
 - `.includePaths`: an array of include paths
-- `.sourceMap`: controls whether to generate sourceMaps, defaults to `true` in development. The sourceMap file will be saved to `options.outputFile + '.map'`
+- `.sourceMap`: controls sourcemap options, defaults to `include: true` in development. The sourceMap file will be saved to `options.outputFile + '.map'`
 
 ## Example
 
