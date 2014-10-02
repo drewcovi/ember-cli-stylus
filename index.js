@@ -1,9 +1,9 @@
-var SassCompiler = require('broccoli-sass');
+var StylusCompiler = require('broccoli-stylus-single');
 
-function SASSPlugin(options) {
+function StylusPlugin(options) {
   this.name = 'ember-cli-sass';
   options = options || {};
-  options.inputFile = options.inputFile || 'app.scss';
+  options.inputFile = options.inputFile || 'app.styl';
   options.outputFile = options.outputFile || 'app.css';
   if (options.sourceMap) {
     options.sourceComments = 'map';
@@ -12,29 +12,29 @@ function SASSPlugin(options) {
   this.options = options;
 };
 
-SASSPlugin.prototype.toTree = function(tree, inputPath, outputPath) {
+StylusPlugin.prototype.toTree = function(tree, inputPath, outputPath) {
   var trees = [tree];
   if (this.options.includePaths) trees = trees.concat(this.options.includePaths);
   inputPath += '/' + this.options.inputFile;
   outputPath += '/' + this.options.outputFile;
-  return new SassCompiler(trees, inputPath, outputPath, this.options);
+  return new StylusCompiler(trees, inputPath, outputPath, this.options);
 };
 
-function EmberCLISASS(project) {
+function EmberCLIStylus(project) {
   this.project = project;
-  this.name = 'Ember CLI SASS';
+  this.name = 'Ember CLI Stylus';
 }
 
-EmberCLISASS.prototype.treeFor = function treeFor(type) {
+EmberCLIStylus.prototype.treeFor = function treeFor(type) {
 };
 
-EmberCLISASS.prototype.included = function included(app) {
-  var options = app.options.sassOptions || {};
+EmberCLIStylus.prototype.included = function included(app) {
+  var options = app.options.stylusOptions || {};
   if ((options.sourceMap === undefined) && (app.env == 'development')) {
-    options.sourceMap = true;
+    options.sourcemap = {inline: true};
   }
   options.outputFile = options.outputFile || this.project.name() + '.css';
-  app.registry.add('css', new SASSPlugin(options));
+  app.registry.add('css', new StylusPlugin(options));
 };
 
-module.exports = EmberCLISASS;
+module.exports = EmberCLIStylus;
