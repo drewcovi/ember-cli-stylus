@@ -30,9 +30,12 @@ EmberCLIStylus.prototype.treeFor = function treeFor(type) {
 
 EmberCLIStylus.prototype.included = function included(app) {
   var options = app.options.stylusOptions || {};
-  // if ((options.sourceMap === undefined) && (app.env == 'development')) {
-  //   options.sourcemap = {inline: true};
-  // }
+  if ((options.sourceMap === undefined) && (app.env == 'development')) {
+    options.sourcemap = {
+      inline: true
+    };
+    options.cache = false;
+  }
   options.outputFile = options.outputFile || this.project.name() + '.css';
   app.registry.add('css', new StylusPlugin(options));
 };
