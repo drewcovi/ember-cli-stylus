@@ -27,6 +27,7 @@ var app = new EmberApp({
 - `.outputFile`: the output CSS file, defaults to `app.css`
 - `.includePaths`: an array of include paths
 - `.sourceMap`: controls sourcemap options, defaults to `include: true` in development. The sourceMap file will be saved to `options.outputFile + '.map'`
+- `.use`: array with stylus plugins, check [stylus API](http://learnboost.github.io/stylus/docs/js.html#usefn)
 
 ## Example
 
