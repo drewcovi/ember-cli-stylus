@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-stylus",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Use node-stylus to preprocess your ember-cli app's files, with support for sourceMaps and include paths",
   "main": "index.js",
   "scripts": {
