@@ -2,6 +2,7 @@ var StylusCompiler = require('broccoli-stylus-single');
 
 function StylusPlugin(options) {
   this.name = 'ember-cli-stylus';
+  this.ext = 'styl';
   options = options || {};
   options.inputFile = options.inputFile || 'app.styl';
   options.outputFile = options.outputFile || 'app.css';
