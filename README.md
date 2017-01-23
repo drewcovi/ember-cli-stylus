@@ -39,7 +39,7 @@ Install some Stylus:
 bower install --save foundation
 ```
 
-Specify some include paths in Brocfile.js:
+Specify some include paths in `ember-cli-build.js`:
 
 ```javascript
 var app = new EmberApp({
