@@ -26,7 +26,7 @@ var app = new EmberApp({
 - `.inputFile`: the input Stylus file, defaults to `app.styl`
 - `.outputFile`: the output CSS file, defaults to `app.css`
 - `.includePaths`: an array of include paths
-- `.sourceMap`: controls sourcemap options, defaults to `include: true` in development. The sourceMap file will be saved to `options.outputFile + '.map'`
+- `.sourceMap`: controls sourcemap options, defaults to `inline: true` in development. The sourceMap file will be saved to `options.outputFile + '.map'`
 - `.use`: array with stylus plugins, check [stylus API](http://learnboost.github.io/stylus/docs/js.html#usefn)
 
 ## Example
@@ -39,7 +39,7 @@ Install some Stylus:
 bower install --save foundation
 ```
 
-Specify some include paths in Brocfile.js:
+Specify some include paths in `ember-cli-build.js`:
 
 ```javascript
 var app = new EmberApp({
