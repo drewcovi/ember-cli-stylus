@@ -1,5 +1,7 @@
 var StylusCompiler = require('broccoli-stylus-single');
+var path = require('path');
 var checker = require('ember-cli-version-checker');
+var mergeTrees = require('broccoli-merge-trees');
 
 function StylusPlugin(optionsFn) {
   this.name = 'ember-cli-stylus';
@@ -7,13 +9,22 @@ function StylusPlugin(optionsFn) {
   this.optionsFn = optionsFn;
 };
 
-StylusPlugin.prototype.toTree = function(tree, inputPath, outputPath) {
+StylusPlugin.prototype.toTree = function(tree, inputPath, outputPath, inputOptions) {
   var trees = [tree];
-  var options = this.optionsFn();
-  if (options.includePaths) trees = trees.concat(options.includePaths);
-  inputPath += '/' + options.inputFile;
-  outputPath += '/' + options.outputFile;
-  return new StylusCompiler(trees, inputPath, outputPath, options);
+  var options = Object.assign({}, this.optionsFn(), inputOptions);
+
+  if (options.includePaths) {
+    trees = trees.concat(options.includePaths);
+  }
+
+  var paths = options.outputPaths;
+  var trees = Object.keys(paths).map(function(file) {
+    var input = path.join(inputPath, file + '.styl');
+    var output = paths[file];
+    return new StylusCompiler(trees, input, output, options);
+  });
+
+  return mergeTrees(trees);
 };
 
 module.exports = {
