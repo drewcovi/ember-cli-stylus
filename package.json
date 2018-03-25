@@ -1,21 +1,19 @@
 {
   "name": "ember-cli-stylus",
   "version": "1.0.6",
-  "description": "Use node-stylus to preprocess your ember-cli app's files, with support for sourceMaps and include paths",
+  "description":
+    "Use node-stylus to preprocess your ember-cli app's files, with support for sourceMaps and include paths",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "ember-addon",
-    "sass"
-  ],
+  "keywords": ["ember-addon", "sass"],
   "author": "@drewcovi",
   "license": "MIT",
   "dependencies": {
     "broccoli-merge-trees": "^2.0.0",
-    "broccoli-stylus-single": "^1.0.0",
-    "ember-cli-version-checker": "^1.1.7",
+    "broccoli-stylus-single": "^1.0.1",
+    "ember-cli-version-checker": "^2.1.0",
     "stylus": "0.x"
   },
   "repository": {
