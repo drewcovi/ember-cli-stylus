@@ -15,7 +15,7 @@
   "dependencies": {
     "broccoli-merge-trees": "^2.0.0",
     "broccoli-stylus-single": "^1.0.0",
-    "ember-cli-version-checker": "^1.1.7",
+    "ember-cli-version-checker": "^2.0.0",
     "stylus": "0.x"
   },
   "repository": {
