@@ -12,7 +12,7 @@ npm install --save-dev ember-cli-stylus
 
 ## Usage
 
-By default this addon will compile `app/styles/app.styl` into `dist/assets/app.css` and produce a sourceMap for your delectation.
+By default this addon is set to compile `app/styles/app.styl` into `dist/assets/app.css` and produce a sourceMap for your delectation. This addon _will not_ create the app.styl file for you. The quickest way to get one, would be to change the default `.css` file extention to `.styl` - then restart your app.
 
 Or, if you want more control then you can specify options using the `stylusOptions` config property in `ember-cli-build.js`
 
