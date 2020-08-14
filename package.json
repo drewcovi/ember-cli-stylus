@@ -16,7 +16,7 @@
     "broccoli-merge-trees": "^2.0.0",
     "broccoli-stylus-single": "^1.0.0",
     "ember-cli-version-checker": "^1.1.7",
-    "stylus": "0.x"
+    "stylus": "0.54.5"
   },
   "repository": {
     "type": "git",
